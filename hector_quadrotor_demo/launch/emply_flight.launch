@@ -8,6 +8,7 @@
     </include>
 
     <!-- Spawn simulated quadrotor uav -->
+    <group ns="swarmbot0">
     <include file="$(find hector_quadrotor_gazebo)/launch/test_spawn_quadrotor.launch" >
         <arg name="name" value="q0" />
         <arg name="model" value="$(find hector_quadrotor_description)/urdf/test_quadrotor.gazebo.xacro"/>
@@ -18,27 +19,19 @@
             "/>
         <arg name="x" value="0.0" />
     </include>
+    </group>
 
-    <!-- <include file="$(find hector_quadrotor_gazebo)/launch/test_spawn_quadrotor.launch" > -->
-        <!-- <arg name="name" value="q1" /> -->
-        <!-- <arg name="model" value="$(find hector_quadrotor_description)/urdf/test_quadrotor.gazebo.xacro"/> -->
-        <!-- <arg name="controllers" value=" -->
-            <!-- controller/attitude -->
-            <!-- controller/velocity -->
-            <!-- controller/position -->
-            <!-- "/> -->
-        <!-- <arg name="x" value="0.8" /> -->
-    <!-- </include> -->
-
-    <!-- <include file="$(find hector_quadrotor_gazebo)/launch/test_spawn_quadrotor.launch" > -->
-        <!-- <arg name="name" value="q2" /> -->
-        <!-- <arg name="model" value="$(find hector_quadrotor_description)/urdf/test_quadrotor.gazebo.xacro"/> -->
-        <!-- <arg name="controllers" value=" -->
-            <!-- controller/attitude -->
-            <!-- controller/velocity -->
-            <!-- controller/position -->
-            <!-- "/> -->
-        <!-- <arg name="x" value="-0.8" /> -->
-    <!-- </include> -->
+    <group ns="swarmbot1">
+    <include file="$(find hector_quadrotor_gazebo)/launch/test_spawn_quadrotor.launch" >
+        <arg name="name" value="q1" />
+        <arg name="model" value="$(find hector_quadrotor_description)/urdf/test_quadrotor.gazebo.xacro"/>
+        <arg name="controllers" value="
+            controller/attitude
+            controller/velocity
+            controller/position
+            "/>
+        <arg name="x" value="0.8" />
+    </include>
+    </group>
 
 </launch>
